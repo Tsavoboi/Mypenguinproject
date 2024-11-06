@@ -1,0 +1,29 @@
+---
+title: "Cleaner penguin code"
+format: html
+editor: visual
+---
+
+## Cleaner pengnuin code
+
+I'm in my own personal hell \## Running Code This is what I want when things are cleaner. Here's some fun graphing LOL
+
+```{r}
+penguins_clean <- read_csv(here("data","penguins_clean.csv"))
+```
+
+```{r}
+Species_colours <- c("Adelie"= "darkorange","Chinstrap" = "purple", "Gentoo"= "cyan4")
+
+Flipper_boxplot <- ggplot( 
+  data = penguins_clean, 
+  aes(x = species, y = flipper_length_mm)) + geom_boxplot((aes(color=species)), show.legend=FALSE)+ geom_jitter(alpha = 0.3, show.legend=FALSE, position = position_jitter (width = 0.2, seed = 2)) +scale_color_manual(values=Species_colours) + labs(x="species :P",y="Flipper Length (mm)")
+Flipper_boxplot
+```
+
+You can add options to executable code like this
+
+```         
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
